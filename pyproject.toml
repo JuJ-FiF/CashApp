@@ -1,0 +1,29 @@
+[project]
+name = "cashapp"
+version = "0.1.0"
+description = "Kasse und Deckelverwaltung"
+requires-python = ">=3.11,<3.13"
+dependencies = ["flet==1.0.3", "pyjnius==1.6.1"]
+
+[tool.flet]
+product = "CashApp"
+org = "de.cashapp"
+company = "JuJ-FiF"
+copyright = "Copyright © 2026 JuJ-FiF"
+assets = ["assets"]
+permissions = ["internet"]
+
+[tool.flet.app]
+path = "."
+exclude = ["server", "README.md", "settings.json", "settings.json.bak", "bookings.sqlite*"]
+
+[tool.flet.android.permissions]
+"android.permission.INTERNET" = true
+"android.permission.REQUEST_INSTALL_PACKAGES" = true
+
+[tool.flet.template]
+url = "C:/FLET/FletTemplates/NoAndroidNavBar/build"
+
+[tool.setuptools]
+packages = ["Screens", "Utils"]
+py-modules = ["main"]
